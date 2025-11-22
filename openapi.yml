@@ -3,7 +3,7 @@ info:
   title: AMC Tools API
   version: "1.0.0"
 servers:
-  - url: https://your-public-api-url.com
+  - url: srv-d4h15kndiees73b8hl90
 paths:
   /compute_yoy_deltas:
     post:

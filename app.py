@@ -51,3 +51,4 @@ def compute_yoy_deltas(req: YoYRequest, x_api_key: str = Header(None, convert_un
             "pct_change": pct
         })
     return {"sorted_series": series, "deltas": deltas, "notes": notes}
+
