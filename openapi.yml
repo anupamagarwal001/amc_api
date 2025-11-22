@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: AMC Tools API
+  version: "1.0.0"
+servers:
+  - url: https://your-public-api-url.com
+paths:
+  /compute_yoy_deltas:
+    post:
+      operationId: compute_yoy_deltas
+      summary: Compute year-over-year delta values
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data_series]
+              properties:
+                data_series:
+                  type: array
+                  items:
+                    type: object
+                    required: [year, value]
+                    properties:
+                      year: { type: integer }
+                      value: { type: number }
+      responses:
+        "200":
+          description: OK
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
